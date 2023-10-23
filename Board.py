@@ -6,7 +6,7 @@ import pieces
 piece_names = ["Bb", "Wb", "Bk", "Wk", "Bn",
                "Wn", "bp", "wp", "Bq", "Wq", "Br", "Wr"]
 
-# List of image file paths
+
 image_paths = [
     "/Users/amiraliseyedzadegan/Documents/internalprojects/Python/Chess Game/img/Chess_bdt60.png",
     "/Users/amiraliseyedzadegan/Documents/internalprojects/Python/Chess Game/img/Chess_blt60.png",
@@ -21,8 +21,6 @@ image_paths = [
     "/Users/amiraliseyedzadegan/Documents/internalprojects/Python/Chess Game/img/Chess_rdt60.png",
     "/Users/amiraliseyedzadegan/Documents/internalprojects/Python/Chess Game/img/Chess_rlt60.png"
 ]
-
-# Create a dictionary to map piece names to image variables
 
 
 class chess_game:
@@ -82,7 +80,6 @@ class chess_game:
             pieces.chessboard[col][row] = selected_name
             pieces.chessboard[selected_col][selected_row] = ""
             self.create_board()
-            
 
         square = f"{chr(97 + col)}{8 - row}"
         move = f"Moved to {square}"
@@ -93,4 +90,3 @@ class chess_game:
 
 if __name__ == "__main__":
     chess_game()
-
