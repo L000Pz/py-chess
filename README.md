@@ -2,7 +2,7 @@
 
 Welcome to **Python Chess Game**! This project brings you the thrill of chess in a Python-based application, styled with a theme inspired by [Chess.com](https://www.chess.com/). Whether you’re a seasoned player or new to the game, enjoy classic chess right from your command line! 🎉
 <p align="center">
-  <img src="https://drive.google.com/uc?export=view&id=1gm9OcGlmoFmMJmCKnHpMRwS21bcdQYYZ" alt="Description of image" width="300"/>
+  <img src="https://drive.google.com/uc?export=view&id=1gm9OcGlmoFmMJmCKnHpMRwS21bcdQYYZ" alt="Description of image" width="500"/>
 </p>
 
 ---
