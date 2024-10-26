@@ -7,9 +7,9 @@ DIMENSION = 8
 SQ_SIZE=HEIGHT//DIMENSION
 MAX_FPS = 15
 IMAGES = {}
-UNDOICON = p.image.load("chess/images/undo.png")
-REDOICON = p.image.load("chess/images/redo.png")
-NEWGAMEICON = p.image.load("chess/images/plus.png")
+UNDOICON = p.image.load("images/undo.png")
+REDOICON = p.image.load("images/redo.png")
+NEWGAMEICON = p.image.load("images/plus.png")
 UNDO = Button(UNDOICON, (3*SQ_SIZE+SQ_SIZE/2-3, HEIGHT+SQ_SIZE + 40), 15, 30,None)
 REDO = Button(REDOICON, (30+4*SQ_SIZE+SQ_SIZE/2, HEIGHT+SQ_SIZE + 40), 15, 30, None)
 NEWGAME = Button(NEWGAMEICON, (SQ_SIZE+SQ_SIZE/2 +32, HEIGHT+SQ_SIZE + 40), 30, 30, None)
@@ -17,8 +17,8 @@ NEWGAME = Button(NEWGAMEICON, (SQ_SIZE+SQ_SIZE/2 +32, HEIGHT+SQ_SIZE + 40), 30, 
 def loadImg():
     pieces = ['wp','wR','wN','wB','wQ','wK','bp','bR','bN','bB','bQ','bK']
     for piece in pieces:
-        IMAGES[piece] = p.transform.scale(p.image.load("chess/images/"+piece+".png"),(SQ_SIZE,SQ_SIZE))
-    icon = p.image.load(("chess/images/icon.png")) 
+        IMAGES[piece] = p.transform.scale(p.image.load("images/"+piece+".png"),(SQ_SIZE,SQ_SIZE))
+    icon = p.image.load(("images/icon.png")) 
     
     p.display.set_icon(icon)   
     p.display.set_caption("CHOSS.CUM")
@@ -197,7 +197,7 @@ def drawClockAndTurn(screen,gameState,currentSec):
     p.draw.rect(screen, (33,32,30), p.Rect(0,0,11*SQ_SIZE,SQ_SIZE))
     p.draw.rect(screen, (33,32,30), p.Rect(0,WIDTH+SQ_SIZE,11*SQ_SIZE,2*SQ_SIZE))
     p.draw.rect(screen, colors[0], p.Rect(HEIGHT-SQ_SIZE,WIDTH+SQ_SIZE+15,2*SQ_SIZE,SQ_SIZE-20),0,7)
-    FONT = p.font.Font("chess/assets/Montserrat-Bold.ttf", 30)
+    FONT = p.font.Font("assets/Montserrat-Bold.ttf", 30)
     if currentSec >= 0 :
         display_seconds = currentSec % 60
         display_minutes = int(currentSec / 60) % 60
@@ -205,19 +205,19 @@ def drawClockAndTurn(screen,gameState,currentSec):
     timer_text_rect = timer_text.get_rect(center=(HEIGHT, WIDTH+SQ_SIZE+36))
     screen.blit(timer_text, timer_text_rect)
     if gameState.whiteToMove:
-        FONT = p.font.Font("chess/assets/Montserrat-Bold.ttf", 20)
+        FONT = p.font.Font("assets/Montserrat-Bold.ttf", 20)
         Turn = FONT.render("White to Move", True, "white")
         Turn_rect = Turn.get_rect(center=(HEIGHT, WIDTH+2*SQ_SIZE+10))     
         screen.blit(Turn, Turn_rect)
     if not gameState.whiteToMove:
-        FONT = p.font.Font("chess/assets/Montserrat-Bold.ttf", 20)
+        FONT = p.font.Font("assets/Montserrat-Bold.ttf", 20)
         Turn = FONT.render("Black to Move", True, (82, 79, 76))
         Turn_rect = Turn.get_rect(center=(HEIGHT, WIDTH+2*SQ_SIZE+10))     
         screen.blit(Turn, Turn_rect)
 def drawSQNames(screen):
     colors = [p.Color((238,238,210)),p.Color((118,150,86))]
     letters = ['a','b','c','d','e','f','g','h']
-    FONT = p.font.Font("chess/assets/Montserrat-SemiBold.ttf", 15)
+    FONT = p.font.Font("assets/Montserrat-SemiBold.ttf", 15)
     for i in range(DIMENSION):
         color = colors[((i)%2)]
         letter = FONT.render(letters[i], True, color)
@@ -250,7 +250,7 @@ def drawTaken(screen,gameState):
         col = i % 5
         screen.blit(p.transform.scale(IMAGES[piece],(40,40)),p.Rect(WIDTH + SQ_SIZE+col*23,row*SQ_SIZE + SQ_SIZE ,20,20))
 def drawTxt(screen,text):
-    font = p.font.Font("chess/assets/Montserrat-Bold.ttf", 60)
+    font = p.font.Font("assets/Montserrat-Bold.ttf", 60)
     if text == 'White Wins':
         s = p.Surface((8*SQ_SIZE,8*SQ_SIZE))
         s.fill(p.Color('black'))
@@ -268,7 +268,7 @@ def drawTxt(screen,text):
         textLoc = p.Rect(0,0,WIDTH+SQ_SIZE,HEIGHT+SQ_SIZE).move((WIDTH+2*SQ_SIZE)/2 - textObj.get_width()/2,(HEIGHT+2*SQ_SIZE)/2-textObj.get_height()/2)
         screen.blit(textObj,textLoc)
     elif text == 'STOOLMATE,NOONE WIIIIINSSSSS':
-        font = p.font.Font("chess/assets/Montserrat-Bold.ttf", 20)
+        font = p.font.Font("assets/Montserrat-Bold.ttf", 20)
         s = p.Surface((8*SQ_SIZE,8*SQ_SIZE))
         s.fill(p.Color('black'))
         s.set_alpha(120)
@@ -288,7 +288,7 @@ def save():
                     moveString += " - " + str(moveLog[i + 1]) + " "
                 moveText.append(moveString)
     print (moveText)
-    textFile = open('chess/saves/save.txt', 'w')
+    textFile = open('saves/save.txt', 'w')
     content  = "\n".join(moveText)
     textFile.writelines(content)
     textFile.close()
