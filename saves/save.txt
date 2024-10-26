@@ -1,5 +1,0 @@
-1. e4 - d5 
-2. exd5 - e5 
-3. dxe6 - g6 
-4. exf7 - Kd7 
-5. fxg8
