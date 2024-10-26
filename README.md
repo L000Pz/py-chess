@@ -48,6 +48,20 @@ python main.py
 - **Select moves directly through the command line** by specifying piece coordinates.
 - **Promote pawns via CLI**: If your pawn reaches the opposite side, you can choose its promotion by typing your choice into the CLI.
 
+## 📖 Game Controls
+
+- **Mouse**: Click to select pieces and move them on the board.
+- **Undo Move**: Click the undo button or press `Z`.
+- **Redo Move**: Click the redo button or press `X`.
+- **New Game**: Click the new game button or press `R`.
+- **Save Moves**: Press `S` to save your game’s move log to `saves/save.txt`.
+
+## 📂 Assets and Dependencies
+
+Ensure the following assets and libraries are present:
+
+- **Assets**: The `images` and `assets` folders must contain necessary icons, piece images, and font files.
+
 ## 🤝 Contributing
 
 We welcome contributions! 🎉 Fork the repository, make your improvements, and submit a pull request.
